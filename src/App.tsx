@@ -10,18 +10,18 @@ function App() {
   const [response, setResponse] = useState<any>(null);
   const [error, setError] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [copyStatus,setCopyStatus]=useState<boolean>(false)
   const fetchLink = async () => {
     setLoading(true);
     try {
       const request = await AXIOS.post(API_URLS.GetLinks, {
         url: link,
       });
-      
         setResponse(request.data.short_url);
       
-    } catch (errors) {
-      setError(errors);
-      console.log(response.errors)
+    } catch (error) {
+      setError(error);
+     // console.log(response.errors)
     } finally {
       setLoading(false);
     }
@@ -35,7 +35,10 @@ function App() {
     fetchLink();
   };
   const copyLink = () => {
+    
     navigator.clipboard.writeText(response);
+    setCopyStatus(true)
+
   };
   return (
     <div className="w-full bg-brand-primary h-screen flex justify-center relative">
@@ -52,30 +55,31 @@ function App() {
               <Input
                 placeholder="write your link here"
                 onChange={(value) => handleChange(value)}
-                className={`${error&&"border-2 border-errorcolor text-errorcolor"} text-black font-bold`}
+                className={`${error&&"border-2 border-errorcolor text-errorcolor"} text-black font-bold w-full`}
               />
               <Button
                 isLoading={loading?true:false}
                 text={loading?"wait":"Submit"}
-                className="w-[166px] text-brand-primary"
+                className="w-1/5 text-brand-primary"
                 onClick={handleClick}
               ></Button>
-              <div></div>
+             
             </div>
             <div>
               <div className="bg-accent bg-opacity-20 p-6 mt-8 rounded-3xl flex justify-between shadow-lg shadow-black-500/20">
                 <p className="text-[#ffffff] opacity-90 text-s font-semibold">
                   {response ? response : "wait for the result..."}
                 </p>
+                <div onClick={copyLink}
+                  className="cursor-pointer text-[#f1f1f1] flex justify-center items-center font-bold text-s">
+                <span className="pr-2">{copyStatus?"Copied":"Copy"}</span>
                 <img
                   width="24"
                   height="24"
                   src="https://img.icons8.com/fluency-systems-regular/48/f4f4f4/copy--v1.png"
                   alt="copy--v1"
-                  onClick={copyLink}
-                  className="cursor-pointer"
                 />
-                
+                </div>
               </div>
             </div>
           </section>
