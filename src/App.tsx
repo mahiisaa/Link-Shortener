@@ -6,6 +6,8 @@ import { AXIOS } from "./config/axios.config";
 import { API_URLS } from "./constants/api.urls";
 import { Header } from "./components/Header";
 import {Wave} from "./components/common/Wave"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faCopy } from "@fortawesome/free-solid-svg-icons";
 function App() {
   const [link, setLink] = useState<string>();
   const [response, setResponse] = useState<any>(null);
@@ -45,12 +47,12 @@ function App() {
     setCopyStatus(!copyStatus);
   };
   return (
-    <div className="w-full bg-brand-primary h-screen flex justify-center relative z-0">
+    <div className="w-full bg-brand-primary h-screen flex justify-center relative z-0" >
       <div className="w-5/6 ">
         <Header />
         <div className="flex justify-center mt-[18px]">
           <section className="w-[800px] z-10">
-            <h1 className="text-[#fdfefe] text-xl font-bold tracking-wide text-center mb-[64px]">
+            <h1 className="text-[#fdfefe] sm:text-xl text-base font-bold tracking-wide text-center mb-[64px]">
               Make your <span className="text-secondary">Links</span> shorter
               with WeWink
             </h1>
@@ -83,12 +85,13 @@ function App() {
                   className="cursor-pointer text-[#f1f1f1] flex justify-center items-center font-bold text-s"
                 >
                   <span className="pr-2">{copyStatus ? "Copied" : "Copy"}</span>
-                  <img
+                  {copyStatus?<FontAwesomeIcon icon={faCheck} />:<FontAwesomeIcon icon={faCopy} />}
+                  {/* <img
                     width="24"
                     height="24"
                     src="https://img.icons8.com/fluency-systems-regular/48/f4f4f4/copy--v1.png"
                     alt="copy--v1"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
