@@ -36,7 +36,7 @@ function App() {
     // !value && setError("");
   };
   const handleClick = () => {
-    
+    setCopyStatus(false)
     fetchLink();
   };
   const copyLink = () => {
