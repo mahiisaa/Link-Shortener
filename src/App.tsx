@@ -18,24 +18,30 @@ function App() {
       const request = await AXIOS.post(API_URLS.GetLinks, {
         url: link,
       });
+     
       setResponse(request.data.short_url);
-    } catch (error) {
-      setError(error);
+      setError("")
+
+    } catch (error:any) {
+      setError(error.response.data.errors.url[0]);
+     
     } finally {
       setLoading(false);
     }
   };
   const handleChange = (value: string) => {
     setLink(value);
-    console.log(value);
-    !value && setError("");
+    setError("")
+   // console.log(value);
+    // !value && setError("");
   };
   const handleClick = () => {
+    
     fetchLink();
   };
   const copyLink = () => {
     navigator.clipboard.writeText(response);
-    setCopyStatus(true);
+    setCopyStatus(!copyStatus);
   };
   return (
     <div className="w-full bg-brand-primary h-screen flex justify-center relative z-0">
@@ -67,9 +73,9 @@ function App() {
               ></Button>
             </div>
             <div>
-              <div className="bg-accent bg-opacity-20 p-6 mt-8 rounded-3xl flex justify-between shadow-lg shadow-black-500/20 ">
-                <p className="text-[#ffffff] opacity-90 text-s font-semibold">
-                  {response ? response : "wait for the result..."}
+              <div className={`${error ? "bg-errorcolor":"bg-accent"} bg-opacity-20 p-6 mt-8 rounded-3xl flex justify-between shadow-lg shadow-black-500/20`}>
+                <p className={`text-[#ffffff] opacity-90 text-s font-semibold`}>
+                  {response ? response :(error?error:"result")}
                 </p>
                 <div
                   onClick={copyLink}
