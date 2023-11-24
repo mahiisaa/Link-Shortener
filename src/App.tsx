@@ -60,18 +60,18 @@ function App() {
             Small Actions Bring Big Change
             </h2> */}
 
-            <div className="flex flex-row justify-between items-center w-full mt-[22px]">
+            <div className="sm:flex sm:flex-row sm:justify-between sm:gap-8 items-center w-full mt-[22px]">
               <Input
                 placeholder="write your link here"
                 onChange={(value) => handleChange(value)}
                 className={`${
                   error && "border-2 border-errorcolor text-errorcolor"
-                } text-black font-bold w-full`}
+                } text-black font-bold sm:w-5/6`}
               />
               <Button
                 isLoading={loading ? true : false}
                 text={loading ? "wait" : "Submit"}
-                className="w-1/5 text-brand-primary"
+                className="sm:w-1/5 w-full text-brand-primary sm:m-0 mt-[24px]"
                 onClick={handleClick}
               ></Button>
             </div>
@@ -86,12 +86,6 @@ function App() {
                 >
                   <span className="pr-2">{copyStatus ? "Copied" : "Copy"}</span>
                   {copyStatus?<FontAwesomeIcon icon={faCheck} />:<FontAwesomeIcon icon={faCopy} />}
-                  {/* <img
-                    width="24"
-                    height="24"
-                    src="https://img.icons8.com/fluency-systems-regular/48/f4f4f4/copy--v1.png"
-                    alt="copy--v1"
-                  /> */}
                 </div>
               </div>
             </div>
