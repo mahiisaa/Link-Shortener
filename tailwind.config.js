@@ -16,7 +16,7 @@ module.exports = {
       s: ["16px", "27.64px"],
       m: ["20px", "34.55px"],
       base: ["24px", "41.46px"],
-      xl: ["48px", "82.92px"],
+      xl: ["40px", "82.92px"],
       "2xl": ["64px", "138.18px"],
     },
     fontFamily: {

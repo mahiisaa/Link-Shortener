@@ -1,7 +1,7 @@
 interface IInputProps{
     placeholder:string,
     onChange: ( value: string) => void;
-    className?:string
+    className:string
     }
     export const Input:React.FC<IInputProps>=({placeholder, onChange,className}):JSX.Element=>{
       return(
