@@ -23,6 +23,7 @@ function App() {
       setError("")
 
     } catch (error:any) {
+        setResponse("")
       setError(error.response.data.errors.url[0]);
      
     } finally {
