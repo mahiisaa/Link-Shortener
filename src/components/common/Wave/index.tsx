@@ -1,11 +1,12 @@
 interface IWaveProps{
     viewBox:string,
     fill:string,
-    fillOpacity:string
+    fillOpacity:string,
+    className:string
 }
-export const Wave:React.FC<IWaveProps>=({viewBox,fill,fillOpacity}):JSX.Element=>{
+export const Wave:React.FC<IWaveProps>=({viewBox,fill,fillOpacity,className}):JSX.Element=>{
     return(
-        <div className="absolute bottom-0 w-full">
+        <div className={`absolute w-full ${className}`}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox}>
           <path
             fill={fill}
