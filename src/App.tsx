@@ -18,7 +18,8 @@ function App() {
   const [error, setError] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [copyStatus, setCopyStatus] = useState<boolean>(false);
-  const [language, setLanguage] = useState<boolean>(true);
+  const [language, setLanguage] = useState<string>("en");
+
   const {t}=useTranslation()
   const fetchLink = async () => {
     setLoading(true);
@@ -52,10 +53,11 @@ function App() {
       setCopyStatus(!copyStatus);
     }
   };
-  const changeLang = () => {
-    const lan=language?"fa":"en"
+  const changeLang = (lan:string) => {
+   // const lan=language?"fa":"en"
     i18n.changeLanguage(lan);   // i18n.changeLanguage() is used to change the language assigned to lng in i18n.js file.
-    setLanguage(!language);
+    setLanguage(lan);
+    localStorage.setItem("lang", lan);
 }
   return (
     <div className="w-full bg-brand-primary h-screen flex justify-center relative z-0">

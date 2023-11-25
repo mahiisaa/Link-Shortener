@@ -6,7 +6,7 @@ interface IResultProps{
     error:string,
     response:string,
     copyLink:()=>void,
-    copyStatus:boolean
+    copyStatus:boolean,
 }
 export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus}):JSX.Element=>{
     const {t}=useTranslation()
