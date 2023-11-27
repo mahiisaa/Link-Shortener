@@ -29,7 +29,7 @@ export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus,
                 {!error && response ? (
                   <div
                     onClick={copyLink}
-                    className="cursor-pointer text-light flex justify-end items-center font-normal w-1/6"
+                    className="cursor-pointer text-light flex justify-end items-center font-normal sm:w-1/6 w-2/6"
                   >
                     <span className="pr-2 ">
                       {copyStatus ? t("copied") : t("copy")}
