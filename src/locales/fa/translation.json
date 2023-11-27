@@ -7,5 +7,7 @@
     "result": "نتیجه را از اینجا دریافت کنید...",
     "wait":"منتظر بمانید",
     "copy":"کپی",
-    "copied":"کپی شد"
+    "copied":"کپی شد",
+    "The url format is invalid.": "فرمت لینک اشتباه است",
+    "The url field is required.": "لینک را وارد کنید"
 }

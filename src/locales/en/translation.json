@@ -7,5 +7,7 @@
     "result": "Get your short link here...",
     "wait":"Wait",
     "copy":"Copy",
-    "copied":"Copied"  
+    "copied":"Copied",
+    "The url format is invalid." : "The url format is invalid.",
+    "The url field is required." :"The url field is required."
 }

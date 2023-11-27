@@ -7,22 +7,23 @@ interface IResultProps{
     response:string,
     copyLink:()=>void,
     copyStatus:boolean,
-
+    lang:string,
+    loading:boolean
 }
-export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus}):JSX.Element=>{
+export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus,lang,loading}):JSX.Element=>{
     const {t}=useTranslation()
     return(
-        <div dir={`${localStorage.getItem("lang")==="fa" && !response ? "rtl":"ltr"}`}
+        <div dir={`${lang==="fa" && !response ? "rtl":"ltr"}`}
                 className={`${
                   error ? "text-errorcolor" :response? "text-secondary-light":"text-[#ACC8E5]"
-                }  items-center p-4 mt-8  sm:rounded-2xl rounded-xl flex justify-between shadow-lg shadow-black-500/20 backdrop-blur h-[68px] text-m bg-[#1e293b] bg-opacity-60`}
+                } ${loading &&"animate-pulse"} items-center p-4 mt-8  sm:rounded-2xl rounded-xl flex justify-between shadow-lg shadow-black-500/20 backdrop-blur h-[68px] text-m bg-[#1e293b] bg-opacity-60 `}
                 style={{borderWidth:0.3,borderColor:"light"}}
               >
                 <p className={`font-normal tracking-wide`}>
                   {response
                     ? response
                     : error
-                    ? error
+                    ? t(error)
                     : t("result")}
                 </p>
                 {!error && response ? (

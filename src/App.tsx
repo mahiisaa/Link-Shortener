@@ -30,7 +30,10 @@ function App() {
       setError("");
     } catch (error: any) {
       setResponse("");
-      setError(error.response.data.errors.url[0]);
+
+        setError(error.response.data.errors.url[0])
+
+      
     } finally {
       setLoading(false);
     }
@@ -58,7 +61,7 @@ function App() {
     localStorage.setItem("lang", lan);
 }
   return (
-    <div className="w-full bg-gradient-to-bl from-brand-primary-dark to-brand-primary h-screen flex justify-center relative z-0 ">
+    <div className="w-full bg-gradient-to-bl from-brand-primary-dark to-brand-primary h-[100vh] flex justify-center relative z-0 ">
       <div className="w-5/6 z-10">
         <Header lang={language} changeLang={changeLang} />
         <div className="flex justify-center sm:mt-[22px] mt-[36px]">
@@ -66,7 +69,7 @@ function App() {
             <h1 className="text-light sm:text-xl text-l sm:font-bold font-semibold tracking-wide text-center ">
               {t("heroText1")} <span className="text-secondary">{t("link")}</span> {t("heroText2")}
             </h1>
-            <h2 className="text-[#ACC8E5] sm:text-m text-s tracking-wide font-thin text-center sm:mb-[64px] mb-[22px] sm:mt-[20px] mt-[12px] ">
+            <h2 className="text-[#ACC8E5] sm:text-m text-s tracking-wide font-thin text-center sm:mb-[64px] mb-[36px] sm:mt-[20px] mt-[10px] ">
               {t("slogan")}
             </h2>
 
@@ -84,7 +87,7 @@ function App() {
               ></Button>
             </div>
             <div>
-              <Result error={error} response={response} copyLink={copyLink} copyStatus={copyStatus}/>
+              <Result error={error} response={response} copyLink={copyLink} copyStatus={copyStatus} lang={language} loading={loading}/>
             </div>
           </section>
         </div>
