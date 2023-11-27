@@ -1,11 +1,11 @@
 {
-    "heroText1" : "make your",
-    "heroText2" : "shorter with wewink",
+    "heroText1" : "Make your",
+    "heroText2" : "shorter with WeWink",
     "slogan": "Small changes make a big difference ",
     "generate": "Generate",
     "link":"links",
     "result": "Get your short link here...",
-    "wait":"wait",
-    "copy":"copy",
-    "copied":"copied"  
+    "wait":"Wait",
+    "copy":"Copy",
+    "copied":"Copied"  
 }

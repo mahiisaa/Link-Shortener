@@ -6,12 +6,14 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      "brand-primary":"#001124",
+      // "brand-primary":"#001124",
+      "brand-primary":"#112A46",
+      "brand-primary-dark":"#00050b",
       "secondary":"#006d77",
       "secondary-light":"#009caa",
-      "accent":"#669bbc",
+      "accent":"#06174A",
       "accent2":"#ff6392",
-      "errorcolor":"#c1121f",
+      "errorcolor":"#ca4b54",
       "light":"#fdfefe"
     },
     fontSize: {
@@ -19,11 +21,11 @@ module.exports = {
       m: ["18px", "34.55px"],
       base: ["24px", "41.46px"],
       l: ["28px", "41.46px"],
-      xl: ["40px", "82.92px"],
+      xl: ["42px", "82.92px"],
       "2xl": ["48px", "138.18px"],
     },
     fontFamily: {
-      vazirmatn: ["Vazirmatn"],
+      rubik: ["Rubik"],
     }
   },
   

@@ -6,8 +6,6 @@ import { AXIOS } from "./config/axios.config";
 import { API_URLS } from "./constants/api.urls";
 import { Header } from "./components/Header";
 import { Wave } from "./components/common/Wave";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faCopy } from "@fortawesome/free-solid-svg-icons";
 import { Result } from "./components/Result";
 import i18n from "./i18n";
 import { useTranslation } from "react-i18next";
@@ -60,7 +58,7 @@ function App() {
     localStorage.setItem("lang", lan);
 }
   return (
-    <div className="w-full bg-brand-primary h-screen flex justify-center relative z-0">
+    <div className="w-full bg-gradient-to-bl from-brand-primary-dark to-brand-primary h-screen flex justify-center relative z-0 ">
       <div className="w-5/6 z-10">
         <Header lang={language} changeLang={changeLang} />
         <div className="flex justify-center sm:mt-[22px] mt-[36px]">
@@ -68,11 +66,11 @@ function App() {
             <h1 className="text-light sm:text-xl text-l sm:font-bold font-semibold tracking-wide text-center ">
               {t("heroText1")} <span className="text-secondary">{t("link")}</span> {t("heroText2")}
             </h1>
-            <h2 className="text-[#fdfefe] sm:text-m text-s tracking-wide font-normal text-center mb-[64px]">
+            <h2 className="text-[#ACC8E5] sm:text-m text-s tracking-wide font-thin text-center sm:mb-[64px] mb-[22px] sm:mt-[20px] mt-[12px] ">
               {t("slogan")}
             </h2>
 
-            <div className="sm:flex sm:flex-row sm:justify-between sm:gap-8 items-center w-full mt-[62px]">
+            <div className="sm:flex sm:flex-row sm:justify-between sm:gap-8 items-center w-full ">
               <Input
                 placeholder="https://link.wewink.ir"
                 onChange={(value) => handleChange(value)}
@@ -94,14 +92,14 @@ function App() {
 
       <Wave
         viewBox={"0 0 1000 320"}
-        fill="brand-primary"
+        fill=""
         fillOpacity={"0.4"}
         className="sm:block hidden top-0 rotate-180"
       ></Wave>
       <Wave
         viewBox={"0 0 1440 320"}
-        fill="brand-primary"
-        fillOpacity={"0.4"}
+        fill=""
+        fillOpacity={"1"}
         className="sm:block hidden bottom-0"
       ></Wave>
       {/* <div className="sm:hidden block rounded-full bg-secondary w-[10px] h-[10px] absolute bottom-10 right-20 z-0"></div>

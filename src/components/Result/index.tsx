@@ -7,16 +7,18 @@ interface IResultProps{
     response:string,
     copyLink:()=>void,
     copyStatus:boolean,
+
 }
 export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus}):JSX.Element=>{
     const {t}=useTranslation()
     return(
-        <div
+        <div dir={`${localStorage.getItem("lang")==="fa" && !response ? "rtl":"ltr"}`}
                 className={`${
-                  error ? "bg-errorcolor/20" : "bg-light/10"
-                } bg-opacity-20 items-center p-4 mt-8  sm:rounded-2xl rounded-xl flex justify-between shadow-lg shadow-black-500/20 backdrop-blur border-2 border-light h-[68px] text-base text-m `}
+                  error ? "text-errorcolor" :response? "text-secondary-light":"text-[#ACC8E5]"
+                }  items-center p-4 mt-8  sm:rounded-2xl rounded-xl flex justify-between shadow-lg shadow-black-500/20 backdrop-blur h-[68px] text-m bg-[#1e293b] bg-opacity-60`}
+                style={{borderWidth:0.3,borderColor:"light"}}
               >
-                <p className={`text-[#c1c1c1] font-normal tracking-wide`}>
+                <p className={`font-normal tracking-wide`}>
                   {response
                     ? response
                     : error
@@ -28,7 +30,7 @@ export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus}
                     onClick={copyLink}
                     className="cursor-pointer text-light flex justify-end items-center font-normal w-1/6"
                   >
-                    <span className="pr-2">
+                    <span className="pr-2 ">
                       {copyStatus ? t("copied") : t("copy")}
                     </span>
                     {copyStatus ? (

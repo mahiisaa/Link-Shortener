@@ -3,20 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: Vazirmatn;
-    src: url("../src/assets/fonts/Vazirmatn/Vazirmatn-Medium.ttf") format('truetype');
+    font-family: Rubik;
+    src: url("../src/assets/fonts/Rubik//Rubik-Regular.ttf") format('truetype');
     font-weight: normal;
   }
 
-  /* * {
-    @apply font-vazirmatn
-  } */
-  .spinner {
-    animation: spin infinite 5s linear;
-
-    /*You can increase or decrease the timer (5s) to 
-     increase or decrease the speed of the spinner*/
+  * {
+    @apply font-rubik
   }
+
 
 @keyframes spin {
   from {
