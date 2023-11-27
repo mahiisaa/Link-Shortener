@@ -62,7 +62,7 @@ function App() {
 }
   return (
     <div className="w-full bg-gradient-to-bl from-brand-primary-dark to-brand-primary h-[100vh] flex justify-center relative z-0 ">
-      <div className="sm:w-5/6 w-full sm:px-0 px-4  z-10">
+      <div className="sm:w-5/6 w-full sm:px-0 px-6 z-10">
         <Header lang={language} changeLang={changeLang} />
         <div className="flex justify-center sm:mt-[22px] mt-[36px]">
           <section className="w-[800px] z-10">

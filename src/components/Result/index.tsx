@@ -16,7 +16,7 @@ export const Result:React.FC<IResultProps>=({error,response,copyLink,copyStatus,
         <div dir={`${lang==="fa" && !response ? "rtl":"ltr"}`}
                 className={`${
                   error ? "text-errorcolor" :response? "text-secondary-light":"text-[#ACC8E5]"
-                } ${loading &&"animate-pulse"} items-center p-4 mt-8  sm:rounded-2xl rounded-xl flex justify-between shadow-lg shadow-black-500/20 backdrop-blur h-[68px] text-m bg-[#1e293b] bg-opacity-60 `}
+                } ${loading &&"animate-pulse"} items-center p-4 mt-8  sm:rounded-2xl rounded-xl flex justify-between shadow-lg shadow-black-500/20 backdrop-blur sm:h-[68px] h-[64px] text-m  bg-[#1e293b] bg-opacity-60`}
                 style={{borderWidth:0.3,borderColor:"light"}}
               >
                 <p className={`font-normal tracking-wide`}>
