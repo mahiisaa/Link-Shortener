@@ -1,7 +1,7 @@
 import "./App.css";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { AXIOS } from "./config/axios.config";
 import { API_URLS } from "./constants/api.urls";
 import { Header } from "./components/Header";
@@ -16,7 +16,7 @@ function App() {
   const [error, setError] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [copyStatus, setCopyStatus] = useState<boolean>(false);
-  const [language, setLanguage] = useState<string>("en");
+  const [language, setLanguage] = useState<string>(localStorage.getItem("lang")||"en");
 
   const {t}=useTranslation()
   const fetchLink = async () => {
@@ -97,7 +97,7 @@ function App() {
         className="sm:block hidden top-0 rotate-180"
       ></Wave>
       <Wave
-        viewBox={"0 0 1440 320"}
+        viewBox={"0 0 1340 320"}
         fill=""
         fillOpacity={"1"}
         className="sm:block hidden bottom-0"
